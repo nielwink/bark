@@ -31,14 +31,16 @@ const extraSounds = [
 let normal;
 let bark;
 
-if (window.innerHeight >= window.innerWidth) {
-  // portrait
-  normal = document.getElementById('normal-portrait');
-  bark = document.getElementById('bark-portrait');
-} else {
-  // landscape
-  normal = document.getElementById('normal-land');
-  bark = document.getElementById('bark-land');
+function setImages() {
+  if (window.innerHeight >= window.innerWidth) {
+    // portrait
+    normal = document.getElementById('normal-portrait');
+    bark = document.getElementById('bark-portrait');
+  } else {
+    // landscape
+    normal = document.getElementById('normal-land');
+    bark = document.getElementById('bark-land');
+  }
 }
 
 function danielBark() {
@@ -51,11 +53,15 @@ function danielBark() {
     extraSounds[extraIndex].play();
   }
 
+  setImages();
+
   normal.style.display = 'none';
   bark.style.display = 'inline-block';
 }
 
 function danielTamed() {
+  setImages();
+
   normal.style.display = 'inline-block';
   bark.style.display = 'none';
 }
@@ -69,11 +75,9 @@ document.addEventListener('mouseup', e => {
 document.addEventListener('touchstart', e => {
   danielBark();
   e.preventDefault();
-  e.stopPropagation();
 });
 document.addEventListener('touchmove', e => {
   e.preventDefault();
-  e.stopPropagation();
 });
 document.addEventListener('touchend', e => {
   danielTamed();
