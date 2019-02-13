@@ -1,11 +1,11 @@
 'use strict';
 
-// const bgm = new Howl({
-//   src: ['./assets/audio/bgm.mp3'],
-//   autoplay: true,
-//   loop: true,
-//   volume: 0.4
-// });
+const bgm = new Howl({
+  src: ['./assets/audio/bgm.mp3'],
+  autoplay: true,
+  loop: true,
+  volume: 0.4
+});
 
 const barkSounds = [
   new Howl({
@@ -66,9 +66,3 @@ document.addEventListener('mousedown', e => {
 document.addEventListener('mouseup', e => {
   danielTamed();
 });
-// document.addEventListener('touchstart', e => {
-//   console.log('touchstart');
-// });
-// document.addEventListener('touchend', e => {
-//   console.log('touchend');
-// });
