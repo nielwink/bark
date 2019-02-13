@@ -4,7 +4,7 @@ const bgm = new Howl({
   src: ['./assets/audio/bgm.mp3'],
   autoplay: true,
   loop: true,
-  volume: 0.4
+  volume: 0.5
 });
 
 const barkSounds = [
