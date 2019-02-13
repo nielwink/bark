@@ -69,9 +69,11 @@ document.addEventListener('mouseup', e => {
 document.addEventListener('touchstart', e => {
   danielBark();
   e.preventDefault();
+  e.stopPropagation();
 });
 document.addEventListener('touchmove', e => {
   e.preventDefault();
+  e.stopPropagation();
 });
 document.addEventListener('touchend', e => {
   danielTamed();
