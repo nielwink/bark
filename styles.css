@@ -1,0 +1,40 @@
+@media screen and (orientation: portrait) {
+  #normal-land {
+    display: none;
+  }
+  #normal-portrait {
+    display: inline-block;
+  }
+  #bark-land {
+    display: none;
+  }
+  #bark-portrait {
+    display: none;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  #normal-land {
+    display: inline-block;
+  }
+  #normal-portrait {
+    display: none;
+  }
+  #bark-land {
+    display: none;
+  }
+  #bark-portrait {
+    display: none;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+}
