@@ -1,4 +1,11 @@
 @media screen and (orientation: portrait) {
+  body {
+    background: url('./assets/images/normal-portrait.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
   #normal-land {
     display: none;
   }
@@ -14,6 +21,13 @@
 }
 
 @media screen and (orientation: landscape) {
+  body {
+    background: url('./assets/images/normal.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
   #normal-land {
     display: inline-block;
   }
@@ -36,5 +50,4 @@ body {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  position: absolute;
 }
