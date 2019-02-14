@@ -30,17 +30,24 @@ const extraSounds = [
 
 let normal;
 let bark;
+let otherN;
+let otherB;
 
-function setImages() {
+function onResize() {
   if (window.innerHeight >= window.innerWidth) {
-    // portrait
     normal = document.getElementById('normal-portrait');
     bark = document.getElementById('bark-portrait');
+    otherN = document.getElementById('normal-land');
+    otherB = document.getElementById('bark-land');
   } else {
-    // landscape
     normal = document.getElementById('normal-land');
     bark = document.getElementById('bark-land');
+    otherN = document.getElementById('normal-portrait');
+    otherB = document.getElementById('bark-portrait');
   }
+
+  otherN.style.display = 'none';
+  otherB.style.display = 'none';
 }
 
 function danielBark() {
@@ -53,15 +60,11 @@ function danielBark() {
     extraSounds[extraIndex].play();
   }
 
-  setImages();
-
   normal.style.display = 'none';
   bark.style.display = 'inline-block';
 }
 
 function danielTamed() {
-  setImages();
-
   normal.style.display = 'inline-block';
   bark.style.display = 'none';
 }
@@ -93,3 +96,6 @@ document.addEventListener('touchend', e => {
 document.addEventListener('touchcancel', e => {
   danielTamed();
 });
+window.addEventListener('resize', onResize);
+
+onResize();
